@@ -74,7 +74,8 @@
 \RequirePackage{bm}
 \RequirePackage[T1]{fontenc}
 \RequirePackage[amsmath,thmmarks,hyperref]{ntheorem}
-\RequirePackage[CJKnumber,CJKchecksingle,no-math]{xeCJK}
+\RequirePackage[CJKchecksingle,no-math]{xeCJK}
+\RequirePackage{CJKnumb}
 \RequirePackage{indentfirst}
 \RequirePackage[numbers,sort&compress,square]{natbib}
 \RequirePackage[colorlinks=true,linkcolor=blue,citecolor=red,pdfborder=0 1 1]{hyperref}
@@ -82,7 +83,7 @@
 \xeCJKsetcharclass{"0}{"2E7F}{0}
 \xeCJKsetcharclass{"2E80}{"FFFF}{1}
 \newcommand\installTTF{%
-  \setmainfont{Times New Roman}
+  \setmainfont{AdobeGaramond Adobe Garamond Regular}
   \setsansfont{Arial}
   \setmonofont{Courier New}
   \ifisvista
@@ -107,19 +108,19 @@
   \setmainfont{Times New Roman} % could be changed to "Times New Roman PS Std" !!
   \setsansfont{Arial}
   \setmonofont{Courier New}
-  \setCJKmainfont[BoldFont={Adobe Heiti Std},ItalicFont={Adobe Kaiti Std}]{Adobe Song Std}
-  \setCJKsansfont{Adobe Heiti Std}
-  \setCJKmonofont{Adobe Kaiti Std}
-  \setCJKfamilyfont{song}{Adobe Song Std}
-  \setCJKfamilyfont{hei}{Adobe Heiti Std}
-  \setCJKfamilyfont{fs}{Adobe Fangsong Std}
-  \setCJKfamilyfont{kai}{Adobe Kaiti Std}
-  \setCJKfamilyfont{li}{Adobe Kaiti Std}
-  \setCJKfamilyfont{you}{Adobe Kaiti Std}
-  \setCJKfamilyfont{cusong}{STZhongsong}
+  \setCJKmainfont[BoldFont={Heiti SC Medium},ItalicFont={Kaiti SC Regular}]{Songti SC Regular}
+  \setCJKsansfont{Heiti SC Light}
+  \setCJKmonofont{Kaiti SC Regular}
+  \setCJKfamilyfont{song}{Songti SC Regular}
+  \setCJKfamilyfont{hei}{Heiti SC Medium}
+  \setCJKfamilyfont{fs}{Songti SC Light}
+  \setCJKfamilyfont{kai}{Kaiti SC Regular}
+  \setCJKfamilyfont{li}{Kaiti SC Regular}
+  \setCJKfamilyfont{you}{Kaiti SC Regular}
+  \setCJKfamilyfont{cusong}{Songti SC Bold}
 }
 \newcommand\installFZ{%
-  \setmainfont{Times New Roman} % could be changed to "Times New Roman PS Std" !!
+  \setmainfont{Adobe Garamond Regular} % could be changed to "Times New Roman PS Std" !!
   \setsansfont{Arial}
   \setmonofont{Courier New}
   \setCJKmainfont[BoldFont={FZHei-B01},ItalicFont={FZKai-Z03}]{FZShuSong_GB18030-Z01}
@@ -293,14 +294,14 @@
 \newcommand\ckeywordsname{关键词}
 \newcommand\ckeywords[1]{{\hei\xiaosi \ckeywordsname: #1}}
 \newcommand\ekeywordsname{Key Words}
-\newcommand\ekeywords[1]{\textsf{\xiaosi \ekeywordsname: #1}}
+\newcommand\ekeywords[1]{\textsl{\bf \xiaosi \ekeywordsname: #1}}
 \newenvironment{cabstract}{%
     \chapter{\cabstractname}
     \xiaosi
     \@afterheading}
     {\par\vspace{2em}\par}
 \newenvironment{eabstract}{%
-    \chapter{\textsf{\eabstractname}}
+    \chapter{\bf{\eabstractname}}
     \xiaosi
     \@afterheading}
     {\par\vspace{2em}\par}
@@ -313,7 +314,7 @@
 \setlength{\footnotesep}{2.2ex \@minus 2bp}
 \titleformat{\chapter}{\filcenter\sf \heiti\sanhao[1.25]}{第\CJKnumber{\thechapter}章\,}{1em}{}
 \titleformat{\section}{\filcenter\bfseries \cusong\sihao[1.25]}{\thesection}{1em}{}
-\titleformat{\subsection}{\sf \heiti\xiaosi[1.25]}{\thesubsection}{1em}{}
+\titleformat{\subsection}{\bf \heiti\xiaosi[1.25]}{\thesubsection}{1em}{}
 \titleformat{\subsubsection}{\bfseries \cusong\xiaosi[1.25]}{\thesubsubsection}{1em}{}
 \titlespacing{\chapter}{0pt}{2.4ex-\topskip-\heightof{A}}{2.4ex \@minus 2bp}
 \titlespacing{\section}{0pt}{2ex-\heightof{a}}{2ex \@minus 2bp}
