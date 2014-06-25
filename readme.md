@@ -1,3 +1,3 @@
-Latex template for writing NUDT master/doctorial thesis
+# Mac系统下使用的国防科学技术大学论文模版 
 
-contact : liubenyuan ## gmail ** COM
+这个版本主要考虑到使用MAC的用户，里面默认调用MAC的宋体-简，楷体-简，黑体-简。这几个字体排版绝对超越Adobefont。
