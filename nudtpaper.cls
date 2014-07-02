@@ -34,6 +34,7 @@
 \newif\ifisttf\isttffalse
 \newif\ifisfz\isfzfalse
 \newif\ifisotf\isotffalse
+\newif\ifismac\ismacfalse
 \DeclareOption{master}{\ismastertrue}
 \DeclareOption{doctor}{\ismasterfalse}
 \newif\ifisanon\isanonfalse
@@ -42,6 +43,7 @@
 \DeclareOption{twoside}{\istwosidetrue}
 \DeclareOption{ttf}{\isttftrue}
 \DeclareOption{fz}{\isfztrue}
+\DeclareOption{mac}{\ismactrue}
 \DeclareOption{otf}{\isotftrue}
 \newif\ifisvista\isvistafalse
 \DeclareOption{vista}{\isvistatrue}
@@ -83,7 +85,7 @@
 \xeCJKsetcharclass{"0}{"2E7F}{0}
 \xeCJKsetcharclass{"2E80}{"FFFF}{1}
 \newcommand\installTTF{%
-  \setmainfont{AdobeGaramond Adobe Garamond Regular}
+  \setmainfont{Times New Roman}
   \setsansfont{Arial}
   \setmonofont{Courier New}
   \ifisvista
@@ -108,6 +110,21 @@
   \setmainfont{Times New Roman} % could be changed to "Times New Roman PS Std" !!
   \setsansfont{Arial}
   \setmonofont{Courier New}
+  \setCJKmainfont[BoldFont={Adobe Heiti Std},ItalicFont={Adobe Kaiti Std}]{Adobe Song Std}
+  \setCJKsansfont{Adobe Heiti Std}
+  \setCJKmonofont{Adobe Kaiti Std}
+  \setCJKfamilyfont{song}{Adobe Song Std}
+  \setCJKfamilyfont{hei}{Adobe Heiti Std}
+  \setCJKfamilyfont{fs}{Adobe Fangsong Std}
+  \setCJKfamilyfont{kai}{Adobe Kaiti Std}
+  \setCJKfamilyfont{li}{Adobe Kaiti Std}
+  \setCJKfamilyfont{you}{Adobe Kaiti Std}
+  \setCJKfamilyfont{cusong}{STZhongsong}
+}
+\newcommand\installMAC{%
+  \setmainfont{Times New Roman} % could be changed to "Times New Roman PS Std" !!
+  \setsansfont{Arial}
+  \setmonofont{Monaco}
   \setCJKmainfont[BoldFont={Heiti SC Medium},ItalicFont={Kaiti SC Regular}]{Songti SC Regular}
   \setCJKsansfont{Heiti SC Light}
   \setCJKmonofont{Kaiti SC Regular}
@@ -120,7 +137,7 @@
   \setCJKfamilyfont{cusong}{Songti SC Bold}
 }
 \newcommand\installFZ{%
-  \setmainfont{Adobe Garamond Regular} % could be changed to "Times New Roman PS Std" !!
+  \setmainfont{Monaco} % could be changed to "Times New Roman PS Std" !!
   \setsansfont{Arial}
   \setmonofont{Courier New}
   \setCJKmainfont[BoldFont={FZHei-B01},ItalicFont={FZKai-Z03}]{FZShuSong_GB18030-Z01}
@@ -141,7 +158,11 @@
   \ifisfz
     \installFZ
   \else
-    \installOTF
+    \ifismac
+      \installMAC
+    \else
+      \installOTF
+    \fi
   \fi
 \fi
 \newcommand{\song}{\CJKfamily{song}}    % 宋体

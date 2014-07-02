@@ -4,22 +4,51 @@
 % 原先preamble中的\usepackage{...}用\RequirePackage{...}代替
 
 % 算法以及列表环境
-\RequirePackage{cases,listings}
+\RequirePackage{cases}
 \RequirePackage{fancyvrb}
 \RequirePackage[chapter]{algorithm}
 \RequirePackage{algorithmic}
+\RequirePackage[chapter]{minted}
+\renewcommand\listingscaption{代码}
+%* monokai:
+%    This style mimics the Monokai color scheme.
+%* manni:
+%    A colorful style, inspired by the terminal highlighting style.
+%* rrt:
+%    Minimalistic "rrt" theme, based on Zap and Emacs defaults.
+%* perldoc:
+%    Style similar to the style used in the perldoc code blocks.
+%* borland:
+%    Style similar to the style used in the borland IDEs.
+%* colorful:
+%    A colorful style, inspired by CodeRay.
+%* default:
+%    The default style (inspired by Emacs 22).
+%* murphy:
+%    Murphy's style from CodeRay.
+%* vs:
+%
+%* trac:
+%    Port of the default trac highlighter design.
+%* tango:
+%    The Crunchy default Style inspired from the color palette from the Tango Icon Theme Guidelines.
+%* fruity:
+%    Pygments version of the "native" vim theme.
+%* autumn:
+%    A colorful style, inspired by the terminal highlighting style.
+%* bw:%
 
-% 配置Lstlisting
-\lstset{
-  columns=flexible,sensitive=true,lineskip=-3pt,
-  basicstyle=\small\ttfamily,
-  keywordstyle=\color{blue}\bfseries,
-  stringstyle=\ttfamily,
-  commentstyle=\color{red!50!green!50!blue!50},
-  numbers=left,numberstyle=\tiny,
-  xleftmargin=0.5em,xrightmargin=0.5em,aboveskip=0.5em,
-  showstringspaces=false,breaklines=true,extendedchars=true,escapeinside=``,
-  frame=shadowbox,rulesepcolor=\color{red!20!green!20!blue!20}}
+%* emacs:
+%    The default style (inspired by Emacs 22).
+%* vim:
+%    Styles somewhat like vim 7.0
+%* pastie:
+%    Style similar to the pastie default style.
+%* friendly:
+%    A modern style based on the VIM pyte theme.
+%* native:
+%    Pygments version of the "native" vim theme.
+
 
 % 配置算法包
 \algsetup{indent=3em}
