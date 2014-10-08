@@ -451,67 +451,45 @@ $\beta_a=\lnot \left(\left[s_1\lor s_2\lor \cdots\lor s_m\right]^T\right)$，而
 有时候不想要上标，那么可以这样 \cite{shaheshang}，这个非常重要。
 
 \section{代码高亮}
-有些时候我们需要在论文中引入一段代码，用来衬托正文的内容，或者体现关键思路的实现。
-在模板中，统一使用\texttt{listings}宏包，并且设置了基本的内容格式，并建议用户只
-使用三个接口，分别控制：编程语言，行号以及边框。简洁达意即可，下面分别举例说明。
+代码高亮的红包使用minted，这个宏包支持很好的代码高亮定制，可以使用代码环境，可以为代码命名编号，整体外观非常协调。
 
-首先是设定语言，来一个C的，使用的是默认设置：
-\begin{lstlisting}[language=C]
-void sort(int arr[], int beg, int end)
-{
-  if (end > beg + 1)
-  {
-    int piv = arr[beg], l = beg + 1, r = end;
-    while (l < r)
-    {
-      if (arr[l] <= piv)
-        l++;
-      else
-        swap(&arr[l], &arr[--r]);
-    }
-    swap(&arr[--l], &arr[beg]);
-    sort(arr, beg, l);
-    sort(arr, r, end);
-  }
-}
-\end{lstlisting}
+\definecolor{bg}{rgb}{0.95,0.95,0.95} 
+\begin{listing}[!ht]
+\small
+\begin{minted}[bgcolor=bg]{php}
+<?php
+  echo "Hello, $x";
+?>
+\end{minted}
+\caption{支持背景}
+\end{listing}
 
-当我们需要高亮Java代码，不需要行号，不需要边框时，可以：
-\begin{lstlisting}[language=Java,numbers=none,frame=none]
-// A program to display the message
-// "Hello World!" on standard output
+\begin{listing}[!ht]
+\begin{minted}[mathescape]{python} 
+# Returns $\sum_{i=1}ˆ{n}i$
+def sum_from_one_to(n):
+    r = range(1, n + 1)
+return sum(r) 
+\end{minted}
+\caption{支持数学的代码}
+\end{listing}
 
-public class HelloWorld {
- 
-   public static void main(String[] args) {
-      System.out.println("Hello World!");
-   }
-      
-}   // end of class HelloWorld
-\end{lstlisting}
+\begin{listing}[!ht]
+\mint{cl}/(car (cons 1 ’(2)))/ 
+\caption{代码示例} \label{lst:example}
+\end{listing}
 
-细心的用户可能发现，行号被放在了正文框之外，事实上这样是比较美观的，
-如果有些用户希望在正文框架之内布置所有内容，可以：
-\begin{lstlisting}[language=perl,xleftmargin=2em,framexleftmargin=1.5em]
-#!/usr/bin/perl
-print "Hello, world!\n";
-\end{lstlisting}
+\begin{listing}[!ht]
+\begin{minted}[linenos, firstnumber=11]{python}
+def all(iterable):
+    for i in iterable:
+        if not i:
+            return False
+return True 
+\end{minted}
+\caption{支持行号，和开始行}
+\end{listing}
 
-好了，就这么多，\texttt{listings}宏包的功能很强大也很复杂，如果需要自己定制，
-可以查看其手册，耐心阅读总会找到答案。
-\textbf{注意:} 当前代码环境中文注释的处理还不是很完善，对于注释请妥善处理。
-在本模板中，推荐算法环境或者去掉中文的listings代码环境。
-如果需要包含中文注释，不要求代码高亮，
-就用\texttt{code}环境，这个环境是Verbatim的定制版，简单有效，
-调用的是fancyvbr宏包，用户可在mynudt.sty中修改它的外观等等。
-这里我们还可以给代码加上标签。
-\begin{code}[label=hello.c]
-public class HelloWorld {
-   public static void main(String[] args) {
-      System.out.println("Hello World!");
-   }
-}   // 世界，你好！
-\end{code}
 
 \section{符号列表}
 
