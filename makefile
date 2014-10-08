@@ -1,10 +1,10 @@
 pdf:
-	xelatex thesis
+	xelatex -shell-escape thesis
 	# makeindex -s nomencl.ist -o thesis.nls thesis.nlo
 	bibtex thesis
 	bibtex thesis
-	xelatex thesis
-	xelatex thesis
+	xelatex -shell-escape thesis
+	xelatex -shell-escape thesis
 cls:
 	xelatex nudtpaper.ins
 	xelatex nudtpaper.dtx
