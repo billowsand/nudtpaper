@@ -26,3 +26,41 @@ sys.setdefaultencoding('gbk')
 ```
 
 
+
+## 使用什么模板
+
+### Windows
+windows下的同学可以使用Ctex或者texlive 2014，分别使用下面的版本
+
+ctex：https://github.com/liubenyuan/nudtpaper
+texlive：https://github.com/billowsand/nudtpaper/tree/patch-1
+会用Python的同学可以考虑这个模板，有很好的代码优化：
+texlive：https://github.com/billowsand/nudtpaper
+
+### Mac，Linux
+mac下的同学使用MacTex作为latex版本，mac下的python是自带的，可以直接通过pip安装代码高亮包，所以建议使用这个版本
+https://github.com/billowsand/nudtpaper
+
+## 使用什么编辑器
+很多人搞不清楚编辑器和latex的关系，Latex就相当于你在电脑上安装了gcc，像写C程序一样需要使用一个编辑器去编辑Latex代码，所以好的编辑器可以协助你高效工作。
+
+### windows
+Winedit是最好用的Latex编辑器，也只有在windows下可以使用。但记住要使用8.0以上的版本，否则无法打开。
+
+### mac，linux
+
+这两个平台建议使用sublimeText+LatexTools
+
+使用方法参考这篇文档：http://www.readern.com/sublime-text-latex-chinese-under-mac.html
+
+
+## 关于PDF图片的问题
+使用visio画图时插入Latex中出现空白的问题是因为导出的PDF格式有问题，需要在visio导出时使用“符合PDF/A标准”，不能包含visio的多余信息
+
+## 关于字体的问题
+
+一般大家只要安装了adobe的三个中文otf字体都没有什么问题。
+
+希望大家有什么问题可以反馈给我，及时更新。
+
+
