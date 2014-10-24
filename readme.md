@@ -19,10 +19,10 @@
 7. 重启终端，运行pip install Pygments
 
 运行过程中遇到asccii code问题在出问题的python文件中加入下面代码：
-'''
+```
 import sys
 reload(sys)
 sys.setdefaultencoding('gbk')
-'''
+```
 
 
